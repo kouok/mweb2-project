@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!--viewport一定要加 user-scalable 值可以是yes|no或1|0 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=0" />
+		<!-- 禁止将数字转为号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<!-- 控制顶栏状态栏显示样式，可以为透明 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!-- 添加一个网站图标，这样当你将网站添加到桌面图标时，会显示出来 -->
+		<link rel="apple-touch-icon-precomposed" href="mobile_logo.png?v1" />
+		<title>首页</title>
+		<link rel="stylesheet" href="css/reset.css"/>
+		<link rel="stylesheet" href="css/home.css" />
+		
+		<!-- 将px转rem的公式代码 --> 
+		<script>
+		    var width=window.innerWidth;
+		    //6.4是根据设计图的大小除以100，需要按照你的实际设计图换算
+		    var bili=width/7.5;
+		    document.documentElement.style.fontSize=bili+"px";
+		
+		    // 此时  100px=1rem
+		    // 将所有在设计图量出的尺寸都除以100即可转为对应的rem
+		</script>
+	</head>
+	
+	<body>
+	<div id="app">
+		<!-- banner -->
+		<banner :banner="banner"></banner>
+
+		<!-- 热门超英 -->
+		<rmcy :rmcy="rmcy"></rmcy>
+		<!-- 热门预告 -->
+		<rmyg :rmyg="rmyg"></rmyg>
+			
+		<!-- 猜你喜欢 -->
+		<cnxh :cnxh="cnxh"></cnxh>
+		<!-- 底部标签栏 -->
+		<div class="yew"></div>
+		<div class="yew yew1">
+			<div class="yew2">
+				<img src="img/ia_100000044.png" />
+				<p>首页</p>
+			</div>
+			<div class="yew2">
+				<img src="img/ia_100000045.png" />
+				<p>搜索</p>
+			</div>
+			<div class="yew2">
+				<img src="img/ia_100000046.png" />
+				<p>我的</p>
+			</div>
+		</div>
+	</div>
+	</body>
+	<script src="js/vue.2.6.11.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/home.js"></script>
+	<script src="js/TouchSlide.1.1.js"></script>
+</html>
